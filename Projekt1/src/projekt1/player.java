@@ -1,32 +1,31 @@
+
 package projekt1;
 
 import java.util.Random;
 
-public class player {
-    
-     private String name;
-    
-     Random rand = new Random();
+abstract public class player {
+   
+   private Random dice = new Random();
+   private String name = "anon";
 
-    public String getName() {
+   public player(String name){
+    setName(name);
+}
+    public final String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        if (name != null && !name.isEmpty())
-        //     System.err.println("Imie niepoprawne");
-            this.name = name;
-        else throw new IllegalArgumentException("Imie niepoprawne");
-                
+    public final void setName(String name) {
+       if( name != null && name.matches("^[a-zA-Z0-9~_-]{5,}$")) {
+        this.name = name;
+       } else {
+            throw new IllegalArgumentException();
+           //System.err.println("Nazwa nieprawidłowa");
+         }
     }
    
-
-
-     
-    public int guess() { 
-        return rand.nextInt(6) + 1;
-    }
-
+   abstract public int guess();
+   
 }
 //serr tab
 //sout tab

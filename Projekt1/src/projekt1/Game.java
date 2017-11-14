@@ -1,26 +1,20 @@
 package projekt1;
+
 import java.util.Random;
 import java.util.Scanner;
-public class NewClass {
 
-    public static void main(String[] args) {
-        Scanner klawiatura = new Scanner(System.in);
-        Random dice = new Random(); 
+public class Game {
+    private Random dice = new Random(); 
+    private player Player;
+    
+    public void addplayer (player Player){
+        this.Player = Player;
+    }
+    
+    public void play() {
         
-        player Player = new PlayerComp();
-        
-        Game game = new Game();
-        
-        game.addplayer(Player);
-        
-        game.play();
-        
-        
-       
-//        Player.setName("Anon");
-/*
-        int number,guess;
-        
+        int number;
+        int guess;
         do{
             number = dice.nextInt(6)+1; 
             System.out.println("WYLOSOWANA TO: "+number);
@@ -34,6 +28,5 @@ public class NewClass {
             }
             
         }while(number!=guess);
-        */
     }
 }
