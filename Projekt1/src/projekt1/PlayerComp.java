@@ -2,10 +2,7 @@ package projekt1;
 import java.util.Random;
 
 public class PlayerComp extends player {
-private Random random = new Random();
-
-public PlayerComp(){
-}
+private final Random random = new Random();
 
 public PlayerComp(String name){
     super(name);
@@ -14,6 +11,6 @@ public PlayerComp(String name){
 
 @Override
 public int guess(){
-       return dice.nextInt(6) + 1;
+       return random.nextInt(6) + 1;
     }    
 }

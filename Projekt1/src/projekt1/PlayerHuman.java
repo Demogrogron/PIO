@@ -6,8 +6,6 @@ import java.util.Scanner;
 public class PlayerHuman extends player {
     Scanner scanner = new Scanner(System.in);
     
-    public PlayerHuman(){
-}
     
     public PlayerHuman(String name){
     super(name);

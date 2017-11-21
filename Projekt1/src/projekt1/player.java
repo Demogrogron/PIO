@@ -5,7 +5,7 @@ import java.util.Random;
 
 abstract public class player {
    
-   private Random dice = new Random();
+   private final Random dice = new Random();
    private String name = "anon";
 
    public player(String name){
@@ -21,6 +21,7 @@ abstract public class player {
        } else {
             throw new IllegalArgumentException();
            //System.err.println("Nazwa nieprawidłowa");
+         
          }
     }
    

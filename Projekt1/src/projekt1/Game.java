@@ -1,20 +1,22 @@
 package projekt1;
-
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 public class Game {
-    private Random dice = new Random(); 
+    private final Random dice = new Random(); 
     private player Player;
+    List<String> players = new ArrayList();
     
     public void addplayer (player Player){
         this.Player = Player;
+       // players.add(Player);
     }
+    
     
     public void play() {
         
         int number;
         int guess;
+        
         do{
             number = dice.nextInt(6)+1; 
             System.out.println("WYLOSOWANA TO: "+number);
