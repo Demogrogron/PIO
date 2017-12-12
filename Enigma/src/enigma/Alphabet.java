@@ -6,6 +6,9 @@ package enigma;
     public String charset= "";
     
     public Alphabet(String charset){
+        if(charset.isEmpty()||charset == null){
+            throw new IllegalArgumentException("zestaw znakow nie moze byc pusty");
+        }
         this.charset = charset;
     }
 
@@ -22,7 +25,8 @@ package enigma;
     }
 
     public int charAt(int idx) {
-        return charset.charAt(idx % charset.length());     
+        int i = idx % charset.length();
+        return charset.charAt(i);     
     }
 
     public int length() {
